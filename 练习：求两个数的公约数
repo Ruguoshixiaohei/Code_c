@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("请输入两个数字\n");
+    int m = 0;
+    int n = 0;
+    int z = 0;
+    scanf_s("%d%d", &m, &n);
+    while (m % n!=0)
+    {
+        z = m % n;
+        m = n;
+        n = z;
+    }
+    printf("公约数为；%d\n", n);
+    return 0;
+}
