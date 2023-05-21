@@ -1,0 +1,28 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int main()
+{
+int i = 0;
+char arry1[50] = { 0 };
+printf("欢迎登录账户\n");
+for (i = 0; i < 3; i++)
+{
+printf("请输入你的密码:>");
+scanf_s("%49s", arry1,50);
+while (getchar() != '\n');
+if (strcmp(arry1, "123456") == 0)
+{
+  printf("输入成功\n");
+  break;
+}
+else
+{
+	printf("输入错误，请重新输入\n");
+}
+}
+if (i == 3)
+printf("三次机会没了");
+return 0;
+}
