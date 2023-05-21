@@ -1,0 +1,30 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("请输入三个个位数字\n");
+    int x = 0;
+    int y = 0;
+    int z = 0;
+    scanf_s("%1d%1d%1d", &x, &y, &z);
+    if (y > x) {
+        int m = x;
+        x = y;
+        y = m;
+    }
+    if (z > x) {
+        int m = x;
+        x = z;
+        z = m;
+    }
+    if (y < z) {
+        int m = y;
+        y = z;
+        z = m;
+    }
+    printf("%d %d %d\n", x, y, z);
+    return 0;
+}
