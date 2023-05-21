@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("求素数");
+    int n = 0;
+    int i = 0;
+    for (n = 1; n <= 100; n++)
+    {
+        for (i = 2; i < n; i++)
+        {
+            if (n % i == 0)
+                break;
+        }
+        if (i == n)
+            printf("%d\n", n);
+    }
+    return 0;
+}
