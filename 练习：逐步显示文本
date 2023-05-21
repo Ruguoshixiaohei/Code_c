@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+#include <stdlib.h>
+int main()
+{
+	char arry1[] = "hello word";
+	char arry2[] = "##########";
+	int lenth = sizeof(arry1) / sizeof(arry1[0]);
+	int right = lenth - 2;
+	int left = 0;
+
+	while (left <= right)
+	{
+		arry2[left] = arry1[left];	
+		arry2[right] = arry1[right];
+		printf("%s\n", arry2);
+		left++;
+		right--;
+		Sleep(1000);
+		system("cls");
+	}
+	printf("%s/n", arry2);
+return 0;
+}
