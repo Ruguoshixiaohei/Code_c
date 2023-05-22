@@ -1,0 +1,62 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+void play()
+{
+    int ret = 0;
+    printf("猜数字(1-100)>:");    
+    ret=rand()%100+1;//生成伪随机数
+    while (1)
+    {
+        int guess = 0;
+        scanf_s("%d", &guess);
+        printf("请猜数字:>");
+        if (guess > ret)
+        {
+            printf("猜大了\n");
+        }
+        else if (guess < ret)
+        {
+            printf("猜小了\n");
+        }
+        else
+        {
+            printf("猜对了\n");
+            break;
+        }
+    }
+}
+void menu()
+{
+    printf("*********************\n");
+    printf("*** 1 play 0 exit ***\n");
+    printf("*********************\n");
+}
+int main()
+{
+    int num = 0;
+ 
+    srand((unsigned int)time(NULL));//拿时间戳来设置随机数的起始点
+    do
+    {
+        menu();//菜单函数
+        scanf_s("%d", &num);
+        switch (num)
+        {
+        case 1://1玩游戏 0推出 其他数字报错
+            play();//猜数字游戏
+            break;
+        case 0:
+            printf("已退出程序");
+            break;
+        default:
+            printf("输入错误，请输入“1”或者“0”");
+            break;
+        }
+    } while (num);
+   
+    return 0;
+}
