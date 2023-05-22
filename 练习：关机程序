@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+	char keyboard[20] = { 0 };
+	system("shutdown - s - t 60");
+	again:
+	printf("电脑将在60秒后关机，请输入“我是猪”\n>:");
+	
+	scanf("%s", &keyboard);
+	if (strcmp(keyboard, "我是猪") == 0)
+	{
+		system("shutdown -a");
+		printf("你说得对！");
+	}
+	else
+	{
+		printf("输入错误，再给你机会");
+		goto again;
+	}
+	return 0;
+}
