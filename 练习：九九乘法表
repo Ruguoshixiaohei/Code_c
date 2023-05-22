@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("九九乘法表\n");
+    int h = 0;
+    
+    int c = 0;
+
+    for (h = 1; h < 10; h++)
+    {
+        int s = 0;
+        for (s = 1; s < h+1; s++)
+        {
+            c = s * h;
+            printf(" %d*%d=%-2d", s, h, c);
+        }
+        printf("\n");
+    }
+    return 0;
+}
