@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int pd(int x)
+{
+	int j = 0;
+		if ((x % 4 == 0&&x%100!=0)||x%400==0)
+			return 1;
+		else
+			return 0;
+}
+int main()
+{
+	printf("写一个1000-2000n内的闰年\n");
+	int i = 0;
+	for (i = 1000; i <= 2000; i++)
+	{
+		int ret = 0;
+		ret = pd(i);
+	if (ret == 1)
+		printf("%d\n", i);
+	}
+	
+	return 0;
+}
