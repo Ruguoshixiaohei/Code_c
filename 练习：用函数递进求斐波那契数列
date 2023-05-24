@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+int print(int x)
+{
+	if (x <= 2)
+		return 1;//1 1 2 3 5 8 13 21
+	else
+		return print(x-2) + print(x - 1);
+}
+
+int main()
+{
+	int num = 0;
+	scanf_s("%d", &num);
+	int t = print(num);
+	printf("%d",t);
+	return 0;
+}
