@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+void move(int x, int y)
+{
+	printf("%c->%c\n", x, y);
+}
+void hanl(int n, char a, char b, char c)
+{
+	if (n ==1)
+	{
+		move(a, c);
+		
+	}
+	else
+	{
+		hanl (n - 1, a, c, b);
+		move(a, c);
+		hanl(n - 1, b, a, c);
+	}
+}
+int main()
+{
+	int num = 0;
+	scanf_s("%d", &num);
+	hanl(num, 'a','b','c');
+	return 0;
+}
